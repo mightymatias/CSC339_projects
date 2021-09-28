@@ -10,7 +10,7 @@ Card::Card(suit_e suit, value_e value){
 
 Card::~Card(){}
 
-//If equal, return 0. If not, return 1
+//If equal, return 0. If not, return -1
 int Card::testSuitEquality(Card card){
     if (this->suit != card.suit){
         return -1;
