@@ -77,10 +77,15 @@ void assignmentOne(){
 }
 
 int main(int argc, char **argv){
+    //initialize deck
     Deck deckUno(1);
+
+    //suffle and draw 10 cards twice
     deckUno.shuffle();
     drawCardsFromDeck(10, deckUno);
+
     std::cout << std::endl;
+    
     deckUno.shuffle();
     drawCardsFromDeck(10, deckUno);
     
