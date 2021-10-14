@@ -5,31 +5,39 @@
 
 #include "Deck.h"
 
-#define NUM_CARDS_IN_SUIT 13
-#define NUM_SUITS 4
-
-
+/**
+ * Creates a standard deck of 52 cards.
+ */
 Deck::Deck(int useless){
-    for (int i = 0; i < NUM_SUITS; i++){
-        for (int j = 2; j < NUM_CARDS_IN_SUIT + 1; j++){
+    for (int i = Card::suit_e::Club; i <= Card::suit_e::Spade; i++){
+        for (int j = Card::value_e::Two; j <= Card::value_e::Ace; j++){
             Card *card = new Card((Card::suit_e)i, (Card::value_e)j);
             this->deck.push_back(card);
         }
     }
 }
 
+/**
+ * Destroys a deck of cards.
+ */
 Deck::~Deck(){
     for (int i = 0; i < this->deck.size(); i++){
         delete this->deck[i];
     }
 }
 
+/**
+ * Prints the full deck of cards, sorted. Used for debugging.
+ */
 void Deck::printDeck(){
     for (int i = 0; i < this->deck.size(); i++){
         this->deck[i]->printCard();
     }
 }
 
+/**
+ * Shuffles the cards in a deck by adding them to the stack in a random order. Will also reset the amount of cards back to 52.
+ */
 void Deck::shuffle(){
     if (!this->deckStack.empty()){
         do {deckStack.pop();} while (!deckStack.empty());
@@ -40,8 +48,16 @@ void Deck::shuffle(){
     }
 }
 
+/**
+ * Draws (returns) the top card off of the shuffled stack.
+ * Returns NULL if there are no cards in the deck.
+ */
 Card* Deck::draw(){
-    Card *tempCard = this->deckStack.top();
+    Card *tempCard = NULL;
+    if (this->deckStack.empty()){
+        return tempCard;
+    }
+    tempCard = this->deckStack.top();
     this->deckStack.pop();
     return tempCard;
 }

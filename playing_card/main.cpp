@@ -4,6 +4,10 @@
 #include "Card.h"
 #include "Deck.h"
 
+/**
+ * Helps to test the equality of the suit of two cards.
+ * Full documentation of the comparison function can be found in Card.cpp
+ */
 void suitEqualityTestHelper(Card card, Card compareCard){
     std::cout << "The cards: " << std::endl; 
     card.printCard();
@@ -20,6 +24,10 @@ void suitEqualityTestHelper(Card card, Card compareCard){
     }
 }
 
+/**
+ * Helps to test the equality of the value of two cards.
+ * Full documentation of the comparison function can be found in Card.cpp
+ */
 void valueEqualityTestHelper(Card card, Card compareCard){
     std::cout << "The cards: " << std::endl; 
     card.printCard();
@@ -39,13 +47,18 @@ void valueEqualityTestHelper(Card card, Card compareCard){
     }
 }
 
+/**
+ * Draws ncards cards from the deck provided, and prints them to the console.
+ */
 void drawCardsFromDeck(int ncards, Deck &deck){
     for (int i = 0; i < ncards; i++){
-        Card *tempCard = deck.draw();
-        tempCard->printCard();
+        deck.draw()->printCard();
     }
 }
 
+/**
+ * Main method code from the first assignment. Keeping it for memory's sake
+ */
 void assignmentOne(){
     //create 5 cards
     Card card1(Card::Diamond, Card::Five);
