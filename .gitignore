@@ -31,5 +31,6 @@
 *.out
 *.app
 
-# Random VScode folder
+# Other ignored extensions
 *.vscode
+*.zip
