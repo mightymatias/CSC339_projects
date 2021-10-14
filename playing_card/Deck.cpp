@@ -32,7 +32,11 @@ void Deck::printDeck(){
 
 void Deck::shuffle(){
     if (!this->deckStack.empty()){
-        //if the deck is not empty we need to empty it
+        std::cout << "-----I'm not empty my man-----" << std::endl;
+        do {deckStack.pop();} while (!deckStack.empty());
+    }
+    if (this->deckStack.empty()){
+        std::cout << "-----I am indeed empty-----" << std::endl;
     }
     std::random_shuffle(this->deck.begin(), this->deck.end());
     for (int i = 0; i < this->deck.size(); i++){
