@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "Card.h"
+#include "Deck.h"
 
 void suitEqualityTestHelper(Card card, Card compareCard){
     std::cout << "The cards: " << std::endl; 
@@ -38,15 +39,21 @@ void valueEqualityTestHelper(Card card, Card compareCard){
     }
 }
 
-int main(int argc, char **argv){
+void drawCardsFromDeck(int ncards, Deck &deck){
+    for (int i = 0; i < ncards; i++){
+        Card *tempCard = deck.draw();
+        tempCard->printCard();
+    }
+}
 
+void assignmentOne(){
     //create 5 cards
     Card card1(Card::Diamond, Card::Five);
     Card card2(Card::Diamond, Card::Two);
     Card card3(Card::Heart, Card::Five);
     Card card4(Card::Spade, Card::Ace);
     Card card5(Card::Club, Card::Jack);
-
+    
     //print each to std out
     card1.printCard();
     card2.printCard();
@@ -67,4 +74,16 @@ int main(int argc, char **argv){
     valueEqualityTestHelper(card1, card3);
     std::cout << std::endl;
     valueEqualityTestHelper(card1, card4);
+}
+
+int main(int argc, char **argv){
+    Deck deckUno(1);
+    deckUno.shuffle();
+    drawCardsFromDeck(10, deckUno);
+    std::cout << std::endl;
+    deckUno.shuffle();
+    drawCardsFromDeck(10, deckUno);
+    
+    
+    
 }
