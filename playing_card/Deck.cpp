@@ -8,7 +8,7 @@
 /**
  * Creates a standard deck of 52 cards.
  */
-Deck::Deck(int useless){
+Deck::Deck(){
     for (int i = Card::suit_e::Club; i <= Card::suit_e::Spade; i++){
         for (int j = Card::value_e::Two; j <= Card::value_e::Ace; j++){
             Card *card = new Card((Card::suit_e)i, (Card::value_e)j);
@@ -18,7 +18,7 @@ Deck::Deck(int useless){
 }
 
 /**
- * Destroys a deck of cards.
+ * Destroys a deck of crds.
  */
 Deck::~Deck(){
     for (int i = 0; i < this->deck.size(); i++){
@@ -61,5 +61,3 @@ Card* Deck::draw(){
     this->deckStack.pop();
     return tempCard;
 }
-
-

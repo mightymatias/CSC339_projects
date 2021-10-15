@@ -8,10 +8,7 @@
 
 class Deck {
     public: //CONSTRUCTORS AND DESCONSTRUCTORS
-        /*the classic "it shouldn't need a parameter,
-        but when I remove the parameter,
-        it doesn't work" */
-        Deck(int useless); 
+        Deck(); 
         ~Deck();
 
     public: //METHODS
