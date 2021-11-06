@@ -16,7 +16,7 @@ class Deck {
         Card* draw();
         void printDeck();
 
-    protected:
+    public:
         std::vector<Card*> deck;
         std::stack<Card*> deckStack;
 };

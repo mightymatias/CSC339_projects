@@ -17,7 +17,7 @@ class Card{
     public: //methods
         const char* getSuit();
         const char* getValue();
-        int testValueEquality(Card card);
+        int testValueEquality(Card* card);
         int testSuitEquality(Card card);
         void printCard();
 

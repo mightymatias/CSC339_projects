@@ -25,11 +25,11 @@ int Card::testSuitEquality(Card card){
 * If card is greater than passed in, returns positive
 * If card is less than passed in, returns negative
 */
-int Card::testValueEquality(Card card){
-    if (this->value < card.value){
+int Card::testValueEquality(Card* card){
+    if (this->value < card->value){
         return -1;
     }
-    if (this->value > card.value){
+    if (this->value > card->value){
         return 1;
     }
     else {

@@ -1,2 +1,2 @@
-testDeck: main.cpp Card.cpp Deck.cpp Deck.h Card.h
-	g++ -o runDeck.out main.cpp Card.cpp Deck.cpp
+testDeck: main.cpp Card.cpp Deck.cpp Deck.h Card.h War.h War.cpp
+	g++ -o runDeck.out main.cpp Card.cpp Deck.cpp War.cpp
