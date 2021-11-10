@@ -43,18 +43,14 @@ void Deck::printDeck(){
  * Shuffles the cards in a deck by adding them to the stack in a random order. Will also reset the amount of cards back to 52.
  */
 void Deck::shuffle(){
-    std::cout << "Just got into the shuffle method" << std::endl;
     if (!this->deckStack.empty()){
-        std::cout << "in the if" << std::endl;
         do {deckStack.pop();} while (!deckStack.empty());
     }
-    std::cout << "about to do the shuffle into the deckStack" << std::endl;
     std::shuffle(this->deck.begin(), this->deck.end(), rng);
     //std::random_shuffle(this->deck.begin(), this->deck.end());
     for (int i = 0; i < this->deck.size(); i++){
         this->deckStack.push(this->deck[i]);
     }
-    std::cout << "finished" << std::endl;
 }
 
 /**

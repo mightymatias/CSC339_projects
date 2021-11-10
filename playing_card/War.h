@@ -12,12 +12,13 @@ class War {
 
     public:
         void play();
+        void dealCards(Deck *playDeck, std::stack<Card*> *playerHand, std::stack<Card*> *computerHand);
+        void refillHand(std::vector<Card*> *discardPile, std::stack<Card*> *hand);
+        void warCycle(std::stack<Card*> *playerHand, std::stack<Card*> *computerHand, std::vector<Card*> *playerDiscard, std::vector <Card*> *computerDiscard, std::string playerName);
+        int warTime(std::stack<Card*> *playerHand, std::stack<Card*> *computerHand, std::vector<Card*> *playerDiscard, std::vector <Card*> *computerDiscard, std::string playerName);
 
-    protected:
-        Deck deck;
-        void dealCards(Deck *playDeck, std::stack<Card*> playerHand, std::stack<Card*> computerHand);
-        void refillHand(std::vector<Card*> discardPile, std::stack<Card*> hand);
-        void warCycle(std::stack<Card*> playerHand, std::stack<Card*> computerHand, std::vector<Card*> playerDiscard, std::vector <Card*> computerDiscard, std::string playerName);
+    protected:       
+        Deck *deck;
 
 };
 
